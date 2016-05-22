@@ -43,7 +43,7 @@ var AppComponent = ng.core
 
 
 document.addEventListener('DOMContentLoaded', function() {
-  ng.platform.browser.bootstrap(AppComponent, [])''
+  ng.platform.browser.bootstrap(AppComponent, []);
 });
 
 
