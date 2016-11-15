@@ -26,7 +26,7 @@ var AppComponent = ng.core
         age: 12
       }
       this.isAlive = () => {
-        // this.cat.age = 99;
+        // this.cat.age = 99; // This line will throw an error.
         return this.cat.age < 15;
       };
     }
