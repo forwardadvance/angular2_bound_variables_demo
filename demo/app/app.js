@@ -1,8 +1,5 @@
 // bind an expression
 // bind an attribute on the class
-// vm variable
-// Live binding - setInterval, zones
-
 // bind to a function on the class
 // functions should not have side effects
 
@@ -10,21 +7,27 @@ var AppComponent = ng.core
   .Component({
     selector: "app",
     template:`
-      {{catName}}
-      <div>
-        age: {{catAge}}
-      </div>
-      <div>
-        alive: {{isAlive()}}
-      </div>
+      Hello!
+      <p>
+        The cat name was: <strong>{{cat.name}}</strong>
+      </p>
+      <p>
+        The cat age was: <strong>{{cat.age}}</strong>
+      </p>
+      <p>
+        The cat's status was: {{isAlive()}}
+      </p>
     `
   })
   .Class({
     constructor: function() {
-      this.catName = "Molly";
-      this.catAge = 12;
-      this.isAlive = function isAlive() {
-        return this.catAge < 15;
+      this.cat = {
+        name: "Pugee",
+        age: 12
+      }
+      this.isAlive = () => {
+        // this.cat.age = 99;
+        return this.cat.age < 15;
       };
     }
   });
